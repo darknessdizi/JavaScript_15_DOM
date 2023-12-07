@@ -1,5 +1,7 @@
 # Домашнее задание к занятию "2. DOM"
 
+[![Build status](https://ci.appveyor.com/api/projects/status/v78vaj7bnxs81cve?svg=true)](https://ci.appveyor.com/project/darknessdizi/javascript-15-dom)
+
 Правила сдачи задания:
 
 1. **Важно**: в рамках этого ДЗ можно использовать любой менеджер пакетов
