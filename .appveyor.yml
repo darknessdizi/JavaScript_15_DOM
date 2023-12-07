@@ -9,21 +9,21 @@ branches:
 cache: node_modules  # кеширование
 
 install:
-  - yarn install  # команда установки зависимостей
+  - npm install  # команда установки зависимостей
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
 build_script:
-  - yarn build   # команда сборки
+  - npm build   # команда сборки
 
 test_script:
-  - yarn lint && yarn run test  # скрипт тестирования
+  - npm run lint && npm run test  # скрипт тестирования
 
-# deploy_script:  # скрипт развёртывания
-  # - git config --global credential.helper store
-  # - git config --global user.name AppVeyor
-  # - git config --global user.email ci@appveyor.com
-  # - git config --global user.name "Remezov Dmitriy"
-  # - git config --global user.email "darknessdizi@gmail.com"
-  # - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  # - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+deploy_script:  # скрипт развёртывания
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - git config --global user.name "Remezov Dmitriy"
+  - git config --global user.email "darknessdizi@gmail.com"
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
