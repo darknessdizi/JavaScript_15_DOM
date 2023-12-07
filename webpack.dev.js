@@ -19,4 +19,5 @@ module.exports = merge(common, {
     // Only update what has changed on hot reload
     new webpack.HotModuleReplacementPlugin(),
   ],
+  stats: { children: true },
 });
