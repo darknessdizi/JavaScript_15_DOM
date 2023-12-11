@@ -1,6 +1,7 @@
 function compaireAfterPoint(text) {
+  const number = Number(text);
   let result = "imdb: ";
-  const value = String(text);
+  const value = String(number);
   const point = value.includes(".");
   if (point) {
     const index = value.includes(".");
@@ -56,49 +57,49 @@ function compareIdBig(a, b) {
   const result = a.id - b.id;
   if (result > 1) return 1;
   if (result === 0) return 0;
-  return -1;
+  if (result < 0) return -1;
 }
 
 function compareIdLow(a, b) {
   if (a.id > b.id) return -1;
   if (a.id === b.id) return 0;
-  return 1;
+  if (a.id < b.id) return 1;
 }
 
 function compareTitleBig(a, b) {
   if (a.title > b.title) return 1;
   if (a.title === b.title) return 0;
-  return -1;
+  if (a.title < b.title) return -1;
 }
 
 function compareTitleLow(a, b) {
   if (a.title > b.title) return -1;
   if (a.title === b.title) return 0;
-  return 1;
+  if (a.title < b.title) return 1;
 }
 
 function compareYearBig(a, b) {
   if (a.year > b.year) return 1;
   if (a.year === b.year) return 0;
-  return -1;
+  if (a.year < b.year) return -1;
 }
 
 function compareYearLow(a, b) {
   if (a.year > b.year) return -1;
   if (a.year === b.year) return 0;
-  return 1;
+  if (a.year < b.year) return 1;
 }
 
 function compareImdbBig(a, b) {
   if (a.imdb > b.imdb) return 1;
   if (a.imdb === b.imdb) return 0;
-  return -1;
+  if (a.imdb < b.imdb) return -1;
 }
 
 function compareImdbLow(a, b) {
   if (a.imdb > b.imdb) return -1;
   if (a.imdb === b.imdb) return 0;
-  return 1;
+  if (a.imdb < b.imdb) return 1;
 }
 
 export function* generatorSortedMemory() {

@@ -44,8 +44,9 @@ export const data = [
 ];
 
 function compaireAfterPoint(text) {
+  const number = Number(text);
   let result = "imdb: ";
-  const value = String(text);
+  const value = String(number);
   const point = value.includes(".");
   if (point) {
     const index = value.includes(".");
@@ -111,7 +112,7 @@ function compareIdBig(a, b) {
   const result = a.dataset.id - b.dataset.id;
   if (result > 1) return 1;
   if (result === 0) return 0;
-  return -1;
+  if (result < 1) return -1;
 }
 
 function compareIdLow(a, b) {
@@ -119,19 +120,19 @@ function compareIdLow(a, b) {
   const y = Number(b.dataset.id);
   if (x > y) return -1;
   if (x === y) return 0;
-  return 1;
+  if (x < y) return 1;
 }
 
 function compareTitleBig(a, b) {
   if (a.dataset.title > b.dataset.title) return 1;
   if (a.dataset.title === b.dataset.title) return 0;
-  return -1;
+  if (a.dataset.title < b.dataset.title) return -1;
 }
 
 function compareTitleLow(a, b) {
   if (a.dataset.title > b.dataset.title) return -1;
   if (a.dataset.title === b.dataset.title) return 0;
-  return 1;
+  if (a.dataset.title < b.dataset.title) return 1;
 }
 
 function compareYearBig(a, b) {
@@ -139,7 +140,7 @@ function compareYearBig(a, b) {
   const y = Number(b.dataset.year);
   if (x > y) return 1;
   if (x === y) return 0;
-  return -1;
+  if (x < y) return -1;
 }
 
 function compareYearLow(a, b) {
@@ -147,7 +148,7 @@ function compareYearLow(a, b) {
   const y = Number(b.dataset.year);
   if (x > y) return -1;
   if (x === y) return 0;
-  return 1;
+  if (x < y) return 1;
 }
 
 function compareImdbBig(a, b) {
@@ -155,7 +156,7 @@ function compareImdbBig(a, b) {
   const y = Number(b.dataset.imdb);
   if (x > y) return 1;
   if (x === y) return 0;
-  return -1;
+  if (x < y) return -1;
 }
 
 function compareImdbLow(a, b) {
@@ -163,7 +164,7 @@ function compareImdbLow(a, b) {
   const y = Number(b.dataset.imdb);
   if (x > y) return -1;
   if (x === y) return 0;
-  return 1;
+  if (x < y) return 1;
 }
 
 export function* generatorSortedDataset() {
@@ -190,5 +191,6 @@ export function* generatorSortedDataset() {
 export function changeBackground(params) {
   const td = document.querySelectorAll("td")[params.index];
   td.classList.add("sorted");
-  td.textContent += params.statusIncrease ? " 1" : " 2";
+  // td.textContent += params.statusIncrease ? " \u{1F813}" : " \u{1F811}";
+  td.textContent += params.statusIncrease ? " ↓" : " ↑";
 }
