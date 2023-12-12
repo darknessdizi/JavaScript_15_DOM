@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/v78vaj7bnxs81cve?svg=true)](https://ci.appveyor.com/project/darknessdizi/javascript-15-dom)
 
-Ссылка: 
+Ссылка: https://darknessdizi.github.io/JavaScript_15_DOM/
 
 Правила сдачи задания:
 
