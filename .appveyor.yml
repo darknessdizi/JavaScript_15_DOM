@@ -21,7 +21,7 @@ test_script:
 
 environment:
   my_variable:
-    secure: zQlPGdKvmIN74+IYalzNPIzPKpL5rDDtrKz845QnIQaSb0tkTRfnkhSkVb7d37KR
+    secure: vhsyHRkml8kIy+qqtqrWvbLWiTCWE2GK1LZCLL6d0nB91N5Z2kjNFQwxHRU+55/C
 
 deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
